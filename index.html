@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embers — Habit Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="scene">
+  <header class="masthead">
+    <div class="masthead__mark">◆</div>
+    <div class="masthead__text">
+      <h1>Embers</h1>
+      <p>Keep the small fires lit.</p>
+    </div>
+  </header>
+
+  <form id="addForm" class="add-form" autocomplete="off">
+    <input id="habitInput" type="text" placeholder="Start a new habit — e.g. Read 10 pages" maxlength="60" required>
+    <button type="submit">Light it</button>
+  </form>
+
+  <section id="habitList" class="habit-list" aria-live="polite"></section>
+
+  <p id="emptyState" class="empty-state">
+    No embers burning yet. Add a habit above and check it off each day you show up.
+  </p>
+
+  <template id="habitTemplate">
+    <article class="habit-card">
+      <div class="habit-card__top">
+        <h2 class="habit-card__name"></h2>
+        <button class="habit-card__delete" title="Remove habit" aria-label="Remove habit">✕</button>
+      </div>
+
+      <div class="habit-card__meter" role="group" aria-label="Last 7 days"></div>
+
+      <div class="habit-card__foot">
+        <div class="streak">
+          <span class="streak__count">0</span>
+          <span class="streak__label">day streak</span>
+        </div>
+        <span class="habit-card__best"></span>
+      </div>
+    </article>
+  </template>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
